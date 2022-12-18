@@ -10,6 +10,7 @@ namespace Axelot.DAL.UoW
         private readonly AppDbContext _db;
         private ITaskRepository _taskRepository;
         private IProjectRepository _projectRepository;
+        private bool disposed = false;
         public UnitOfWork(AppDbContext db)
         {
             _db = db;
@@ -37,7 +38,11 @@ namespace Axelot.DAL.UoW
             }
         }
 
-        private bool disposed = false;
+        public async Task SaveChangesAsync()
+        {
+            await _db.SaveChangesAsync();
+        }
+
         public virtual void Dispose(bool disposing)
         {
             if (!disposed)

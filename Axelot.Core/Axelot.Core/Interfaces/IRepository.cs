@@ -7,9 +7,8 @@
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> FindSingleAsync(TEntityPrimaryKey entityId);
         Task<IEnumerable<TEntity>> FindManyAsync(IEntitySelectionSpecification<TEntity, TEntityPrimaryKey> entitySelectionSpecification);
-        void Add(TEntity entity);
-        void AddRange(IEnumerable<TEntity> entites);
-        void Delete(TEntity entity);
-        void DeleteRange(IEnumerable<TEntity> entities);
+        Task Add(TEntity entity);
+        Task Delete(TEntity entity);
+        Task Update(TEntity entity);
     }
 }

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axelot.WebApi", "Axelot.WebApi\Axelot.WebApi.csproj", "{939AA561-9BE8-4EEE-8800-020F8D5BED5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axelot.Business", "Axelot.Business\Axelot.Business.csproj", "{B24A75EC-7208-4D85-9F9A-9BEAEE386D29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Axelot.Business", "Axelot.Business\Axelot.Business.csproj", "{B24A75EC-7208-4D85-9F9A-9BEAEE386D29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axelot.DAL", "Axelot.DAL\Axelot.DAL.csproj", "{41C2E880-C48D-454C-B235-67050DF366EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Axelot.DAL", "Axelot.DAL\Axelot.DAL.csproj", "{41C2E880-C48D-454C-B235-67050DF366EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axelot.Core", "Axelot.Core\Axelot.Core\Axelot.Core.csproj", "{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Axelot.Core", "Axelot.Core\Axelot.Core\Axelot.Core.csproj", "{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Axelot.Core", "Axelot.Core", "{3AF3D8D1-D854-4684-A49E-2C2C3C5F14C8}"
 EndProject

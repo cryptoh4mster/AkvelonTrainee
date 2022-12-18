@@ -1,0 +1,12 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Axelot.Business/bin/Debug/net6.0
+/Axelot.Business/obj
+/Axelot.Core/Axelot.Core/obj
+/Axelot.Core/Axelot.DTO/obj
+/Axelot.DAL/obj
+/Axelot.WebApi/bin/Debug/net6.0
+/Axelot.WebApi/obj

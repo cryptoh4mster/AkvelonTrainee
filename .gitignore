@@ -10,3 +10,6 @@
 /Axelot.DAL/obj
 /Axelot.WebApi/bin/Debug/net6.0
 /Axelot.WebApi/obj
+/Axelot.Core/Axelot.Core/bin/Debug/net6.0
+/Axelot.Core/Axelot.DTO/bin/Debug/net6.0
+/Axelot.DAL/bin/Debug/net6.0

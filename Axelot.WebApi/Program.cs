@@ -1,4 +1,5 @@
 using Axelot.DAL.Extensions;
+using Axelot.Business.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.RegisterDataAccess(configuration);
+builder.Services.RegisterBusinessServices();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

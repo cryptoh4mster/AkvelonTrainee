@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Axelot.Business.Interfaces;
+using Axelot.Business.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Axelot.Business.Extensions
 {
@@ -6,7 +8,8 @@ namespace Axelot.Business.Extensions
     {
         public static void RegisterBusinessServices(this IServiceCollection services)
         {
-
+            services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<ITaskService, TaskService>();
         }
     }
 }

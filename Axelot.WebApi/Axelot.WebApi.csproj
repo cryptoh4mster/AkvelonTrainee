@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Axelot.Business\Axelot.Business.csproj" />
     <ProjectReference Include="..\Axelot.DAL\Axelot.DAL.csproj" />
   </ItemGroup>
 

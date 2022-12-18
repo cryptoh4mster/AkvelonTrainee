@@ -48,14 +48,6 @@ namespace Axelot.DAL.Repositories.Base
             _db.Set<TEntity>().Add(entity);
         }
 
-        public void AddRange(IEnumerable<TEntity> entities)
-        {
-            if (entities is null) 
-                throw new ArgumentNullException($"{nameof(entities)}: argument is not initialized");
-
-            _db.Set<TEntity>().AddRange(entities);
-        }
-
         public void Delete(TEntity entity)
         {
             if (entity is null)
@@ -64,12 +56,12 @@ namespace Axelot.DAL.Repositories.Base
             _db.Set<TEntity>().Remove(entity);
         }
 
-        public void DeleteRange(IEnumerable<TEntity> entities)
+        public void Update(TEntity entity)
         {
-            if (entities is null)
-                throw new ArgumentNullException($"{nameof(entities)}: argument is not initialized");
+            if (entity is null)
+                throw new ArgumentNullException($"{nameof(entity)}: argument is not initialized");
 
-            _db.Set<TEntity>().RemoveRange(entities);
+            _db.Set<TEntity>().Update(entity);
         }
     }
 }

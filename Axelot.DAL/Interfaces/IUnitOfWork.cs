@@ -6,5 +6,6 @@ namespace Axelot.DAL.Interfaces
     {
         ITaskRepository TaskRepository { get; }
         IProjectRepository ProjectRepository { get; }
+        Task SaveChangesAsync();
     }
 }

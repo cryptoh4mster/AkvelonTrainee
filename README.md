@@ -17,6 +17,6 @@ To start the application you should clone this project, open vs, start the appli
 Also you should have postgresql on your computer
 
 Notes:
-1. In filtering-sorting method you should pass "SortByField" property with the same name as a "ProjectCriteriaRequest" properties. 
+1. In filtering-sorting method you should pass "SortByField" property with the same name as a "ProjectCriteriaRequest" properties (i.e. in class string Name{get;set;} - you should pass "Name") . 
 
 

@@ -10,5 +10,6 @@ namespace Akvelon.Business.Interfaces
         Task<ProjectModel> GetProjectById(Guid projectId);
         Task<IEnumerable<ProjectModel>> GetAllProjects();
         Task<ProjectModel> GetProjectWithTasksById(Guid projectId);
+        Task<IEnumerable<ProjectModel>> GetProjectsByCriteria(ProjectCriteriaModel projectCriteriaModel);
     }
 }

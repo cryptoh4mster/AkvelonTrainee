@@ -2,6 +2,9 @@
 
 namespace Akvelon.Business.Models
 {
+    /// <summary>
+    /// Project business model
+    /// </summary>
     public class ProjectModel
     {
         public Guid ProjectId { get; set; }

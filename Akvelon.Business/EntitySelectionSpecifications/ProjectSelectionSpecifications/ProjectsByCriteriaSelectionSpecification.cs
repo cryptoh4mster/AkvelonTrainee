@@ -3,6 +3,9 @@ using System.Linq.Dynamic.Core;
 
 namespace Akvelon.Business.EntitySelectionSpecifications.ProjectSelectionSpecifications
 {
+    /// <summary>
+    /// Specification for filtering and sorting projects
+    /// </summary>
     public class ProjectsByCriteriaSelectionSpecification : ProjectSelectionSpecificationBase
     {
         public ProjectsByCriteriaSelectionSpecification(ProjectCriteriaModel projectCriteriaModel)

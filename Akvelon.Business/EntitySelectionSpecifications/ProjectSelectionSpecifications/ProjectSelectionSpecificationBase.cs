@@ -3,6 +3,9 @@ using Akvelon.DAL.Entities;
 
 namespace Akvelon.Business.EntitySelectionSpecifications.ProjectSelectionSpecifications
 {
+    /// <summary>
+    /// SpecificationBase provides selectionFunction for implementation specifications
+    /// </summary>
     public class ProjectSelectionSpecificationBase : EntitySelectionSpecificationBase<ProjectEntity, Guid>, IProjectSelectionSpecification
     {
         public ProjectSelectionSpecificationBase() { }

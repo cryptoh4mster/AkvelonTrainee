@@ -2,6 +2,9 @@
 
 namespace Akvelon.Business.Interfaces
 {
+    /// <summary>
+    /// Provides methods to work with task business logic service
+    /// </summary>
     public interface ITaskService
     {
         Task AddNewTask(TaskModel taskModel);
@@ -9,6 +12,5 @@ namespace Akvelon.Business.Interfaces
         Task DeleteTaskById(Guid taskId);
         Task<TaskModel> GetTaskById(Guid taskId);
         Task<IEnumerable<TaskModel>> GetAllTasks();
-        Task<IEnumerable<TaskModel>> GettAllTasksByProjectId(Guid projectId);
     }
 }

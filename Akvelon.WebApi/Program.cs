@@ -4,6 +4,7 @@ using Akvelon.WebApi.Extensions;
 using Akvelon.WebApi.Middlewares;
 using Akvelon.DTO.Mapping;
 using Akvelon.Business.Mapping;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,8 @@ builder.Logging.SetupLogger(configuration);
 builder.Services.AddAutoMapper(typeof(ProjectModelMapper), typeof(TaskModelMapper), typeof(ProjectEntityMapper), typeof(TaskEntityMapper), typeof(ProjectCriteriaModelMapper));
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

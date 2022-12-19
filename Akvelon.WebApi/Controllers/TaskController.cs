@@ -1,11 +1,10 @@
-﻿using Akvelon.WebApi.Controllers.Base;
-using AutoMapper;
-using Akvelon.Business.Interfaces;
+﻿using Akvelon.Business.Interfaces;
 using Akvelon.Business.Models;
 using Akvelon.DTO.Models.Requests;
 using Akvelon.DTO.Models.Responses;
+using Akvelon.WebApi.Controllers.Base;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Akvelon.Business.Services;
 
 namespace Akvelon.WebApi.Controllers
 {

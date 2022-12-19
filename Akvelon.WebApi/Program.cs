@@ -6,6 +6,8 @@ using Akvelon.DTO.Mapping;
 using Akvelon.Business.Mapping;
 using FluentValidation.AspNetCore;
 using System.Reflection;
+using Akvelon.DAL.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,5 +45,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
 
 app.Run();

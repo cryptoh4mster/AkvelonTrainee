@@ -9,6 +9,7 @@ services:
     image: postgres:latest
     restart: always
     environment:
+      - POSTGRES_DB=AkvelonProdDb
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:

@@ -16,7 +16,7 @@ namespace Akvelon.DAL.Extensions
         /// <param name="configuration"></param>
         public static void RegisterDataAccess(this IServiceCollection services, IConfiguration configuration)
         {
-            var appDbConnectionString = configuration.GetConnectionString("Axelot.DevelopmentDb");
+            var appDbConnectionString = configuration.GetConnectionString("Akvelon.DevelopmentDb");
             services.AddDbContext<AppDbContext>(options => options.UseNpgsql(appDbConnectionString));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }

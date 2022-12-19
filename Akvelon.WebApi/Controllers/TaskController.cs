@@ -18,6 +18,11 @@ namespace Akvelon.WebApi.Controllers
             _taskService = taskService;
         }
 
+        /// <summary>
+        /// Find task by id
+        /// </summary>
+        /// <param name="request">Task id in request</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("task")]
         public async Task<IActionResult> GetTaskById([FromQuery] GetTaskByIdRequest request)
@@ -27,6 +32,10 @@ namespace Akvelon.WebApi.Controllers
             return Ok(_mapper.Map<TaskResponse>(result));
         }
 
+        /// <summary>
+        /// Find all tasks
+        /// </summary>
+        /// <returns>All tasks</returns>
         [HttpGet]
         [Route("tasks")]
         public async Task<IActionResult> GetAllTasks()
@@ -36,6 +45,11 @@ namespace Akvelon.WebApi.Controllers
             return Ok(_mapper.Map<IEnumerable<TaskResponse>>(result));
         }
 
+        /// <summary>
+        /// Add new task
+        /// </summary>
+        /// <param name="request">New task request</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("task")]
         public async Task<IActionResult> AddNewTask(NewTaskRequest request)
@@ -47,7 +61,12 @@ namespace Akvelon.WebApi.Controllers
             return Ok("");
         }
 
-        [HttpPatch]
+        /// <summary>
+        /// Update exist task
+        /// </summary>
+        /// <param name="request">Task with new values</param>
+        /// <returns></returns>
+        [HttpPut]
         [Route("task")]
         public async Task<IActionResult> UpdateTask(UpdateTaskRequest request)
         {
@@ -58,6 +77,11 @@ namespace Akvelon.WebApi.Controllers
             return Ok("");
         }
 
+        /// <summary>
+        /// Delete exist task
+        /// </summary>
+        /// <param name="request">Task id in request</param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("task")]
         public async Task<IActionResult> DeleteTask([FromQuery] GetTaskByIdRequest request)

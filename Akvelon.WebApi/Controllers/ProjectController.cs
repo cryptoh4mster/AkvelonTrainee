@@ -17,7 +17,12 @@ namespace Akvelon.WebApi.Controllers
         {
             _projectService = projectService;
         }
-
+        
+        /// <summary>
+        /// Find project by id
+        /// </summary>
+        /// <param name="request">Project id in request</param>
+        /// <returns>Project</returns>
         [HttpGet]
         [Route("project")]
         public async Task<IActionResult> GetProjectById([FromQuery] GetProjectByIdRequest request)
@@ -27,6 +32,10 @@ namespace Akvelon.WebApi.Controllers
             return Ok(_mapper.Map<ProjectResponse>(result));
         }
 
+        /// <summary>
+        /// Find all projects
+        /// </summary>
+        /// <returns>All projects</returns>
         [HttpGet]
         [Route("projects")]
         public async Task<IActionResult> GetAllProjects()
@@ -36,6 +45,11 @@ namespace Akvelon.WebApi.Controllers
             return Ok(_mapper.Map<IEnumerable<ProjectResponse>>(result));
         }
 
+        /// <summary>
+        /// Add new project
+        /// </summary>
+        /// <param name="request">New project</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("project")]
         public async Task<IActionResult> AddNewProject(NewProjectRequest request)
@@ -47,7 +61,12 @@ namespace Akvelon.WebApi.Controllers
             return Ok("");
         }
 
-        [HttpPatch]
+        /// <summary>
+        /// Update exist project
+        /// </summary>
+        /// <param name="request">Project with new values</param>
+        /// <returns></returns>
+        [HttpPut]
         [Route("project")]
         public async Task<IActionResult> UpdateProject(UpdateProjectRequest request)
         {
@@ -58,6 +77,11 @@ namespace Akvelon.WebApi.Controllers
             return Ok("");
         }
 
+        /// <summary>
+        /// Delete exist project
+        /// </summary>
+        /// <param name="request">Project id in request</param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("project")]
         public async Task<IActionResult> DeleteProject([FromQuery] GetProjectByIdRequest request)
@@ -67,6 +91,11 @@ namespace Akvelon.WebApi.Controllers
             return Ok("");
         }
 
+        /// <summary>
+        /// Find project with tasks by id
+        /// </summary>
+        /// <param name="request">Project id in request</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("project-with-tasks")]
         public async Task<IActionResult> GetProjectWithTasksById([FromQuery] GetProjectByIdRequest request)
@@ -76,6 +105,11 @@ namespace Akvelon.WebApi.Controllers
             return Ok(_mapper.Map<ProjectWithTasksResponse>(result));
         }
 
+        /// <summary>
+        /// Find projects by criteria
+        /// </summary>
+        /// <param name="request">Different criterias</param>
+        /// <returns>Collection of projects by criterias</returns>
         [HttpPost]
         [Route("projects-by-criteria")]
         public async Task<IActionResult> GetProjectsByCriteria(ProjectCriteriaRequest request)

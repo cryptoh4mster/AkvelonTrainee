@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akvelon.WebApi", "Akvelon.WebApi\Akvelon.WebApi.csproj", "{939AA561-9BE8-4EEE-8800-020F8D5BED5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akvelon.Business", "Akvelon.Business\Akvelon.Business.csproj", "{B24A75EC-7208-4D85-9F9A-9BEAEE386D29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akvelon.DAL", "Akvelon.DAL\Akvelon.DAL.csproj", "{41C2E880-C48D-454C-B235-67050DF366EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akvelon.Core", "Akvelon.Core\Akvelon.Core\Akvelon.Core.csproj", "{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Akvelon.Core", "Akvelon.Core", "{3AF3D8D1-D854-4684-A49E-2C2C3C5F14C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akvelon.DTO", "Akvelon.Core\Akvelon.DTO\Akvelon.DTO.csproj", "{07D1137E-588A-4047-8670-2E6EB8E89648}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{939AA561-9BE8-4EEE-8800-020F8D5BED5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939AA561-9BE8-4EEE-8800-020F8D5BED5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939AA561-9BE8-4EEE-8800-020F8D5BED5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939AA561-9BE8-4EEE-8800-020F8D5BED5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24A75EC-7208-4D85-9F9A-9BEAEE386D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24A75EC-7208-4D85-9F9A-9BEAEE386D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24A75EC-7208-4D85-9F9A-9BEAEE386D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24A75EC-7208-4D85-9F9A-9BEAEE386D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C2E880-C48D-454C-B235-67050DF366EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C2E880-C48D-454C-B235-67050DF366EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C2E880-C48D-454C-B235-67050DF366EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C2E880-C48D-454C-B235-67050DF366EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07D1137E-588A-4047-8670-2E6EB8E89648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D1137E-588A-4047-8670-2E6EB8E89648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D1137E-588A-4047-8670-2E6EB8E89648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D1137E-588A-4047-8670-2E6EB8E89648}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A65D90E6-F9FE-43D5-9B99-C16CCEC74FD9} = {3AF3D8D1-D854-4684-A49E-2C2C3C5F14C8}
+		{07D1137E-588A-4047-8670-2E6EB8E89648} = {3AF3D8D1-D854-4684-A49E-2C2C3C5F14C8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F02D495E-023C-4BB1-A053-2AE757305F81}
+	EndGlobalSection
+EndGlobal

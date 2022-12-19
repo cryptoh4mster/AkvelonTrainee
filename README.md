@@ -13,9 +13,10 @@
 ## Not-Implemented: <br>
   1. Unit tests
 
+## Start:
+  1. You should have postgresql on your computer.
+  2. To start the application you should clone this project, open vs, start the application with AkvelonProfile ![image](https://user-images.githubusercontent.com/55590417/208490380-c986e9f7-2988-487d-ae92-16cde54785a6.png) <br>
+  3. Another way to start project - using docker-compose (build and up), it should work.
+
 ## Notes:
-  1. To start the application you should clone this project, open vs, start the application with AkvelonProfile ![image](https://user-images.githubusercontent.com/55590417/208490380-c986e9f7-2988-487d-ae92-16cde54785a6.png) <br>
-Also you should have postgresql on your computer
-  2. In filtering-sorting method you should pass "SortByField" property with the same name as a "ProjectCriteriaRequest" properties (i.e. if in class - string Name{get;set;} - you should pass "Name"). 
-
-
+  1. In filtering-sorting method you should pass "SortByField" property with the same name as a "ProjectCriteriaRequest" properties (i.e. if in class - string Name{get;set;} - you should pass "Name"). 

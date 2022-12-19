@@ -1,0 +1,31 @@
+version: '3'
+
+networks:
+    akvelonapi-dev:
+      driver: bridge
+      
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - akvelonapi-dev
+  
+  akvelonapi:
+    image: akvelonapi:latest
+    depends_on:
+      - "db"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - akvelonapi-dev
+   
+ 

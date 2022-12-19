@@ -2,6 +2,9 @@
 
 namespace Akvelon.Business.Models
 {
+    /// <summary>
+    /// Task business model
+    /// </summary>
     public class TaskModel
     {
         public Guid TaskId { get; set; }

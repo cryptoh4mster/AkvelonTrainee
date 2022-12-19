@@ -1,5 +1,8 @@
 ﻿namespace Akvelon.Core.Exceptions
 {
+    /// <summary>
+    /// Represents errors, which occur when entity was not found in db
+    /// </summary>
     public class EntityNotFoundException : Exception
     {
         public EntityNotFoundException() { }

@@ -9,6 +9,9 @@ using AutoMapper;
 
 namespace Akvelon.Business.Services
 {
+    /// <summary>
+    /// Business logic service for work with projects
+    /// </summary>
     public class ProjectService : IProjectService
     {
         private readonly IMapper _mapper;

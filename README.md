@@ -9,6 +9,8 @@
   6. Dockerfile build and run works (cd to folder with dockerfile, docker build -t akvelonapi ., docker run --name akvelonapi -p 80:80 akvelonapi:latest)
   7. Docker-compose build and up works (cd to folder with docker-compose, docker-compose build, docker-compose up)
   8. Xml comments (where needed)
+  9. ExceptionHandler
+  10. Logger
 
 ## Not-Implemented: <br>
   1. Unit tests

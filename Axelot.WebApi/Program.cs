@@ -1,5 +1,9 @@
 using Axelot.DAL.Extensions;
 using Axelot.Business.Extensions;
+using Axelot.WebApi.Extensions;
+using Axelot.WebApi.Middlewares;
+using Axelot.DTO.Mapping;
+using Axelot.Business.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +12,9 @@ var configuration = builder.Configuration;
 // Add services to the container.
 builder.Services.RegisterDataAccess(configuration);
 builder.Services.RegisterBusinessServices();
+builder.Logging.SetupLogger(configuration);
+builder.Services.AddAutoMapper(typeof(ProjectModelMapper), typeof(TaskModelMapper), typeof(ProjectEntityMapper), typeof(TaskEntityMapper)); ;
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -21,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandler>();
 
 app.UseHttpsRedirection();
 

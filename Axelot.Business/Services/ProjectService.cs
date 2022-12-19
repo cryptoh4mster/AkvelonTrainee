@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Axelot.Business.Interfaces;
 using Axelot.Business.Models;
+using Axelot.Core.Exceptions;
 using Axelot.DAL.Entities;
 using Axelot.DAL.Interfaces;
 using Axelot.DAL.Interfaces.Repositories;
@@ -23,7 +24,7 @@ namespace Axelot.Business.Services
         {
             var projectEntity = _mapper.Map<ProjectEntity>(projectModel);
 
-            await _projectRepository.Add(projectEntity);
+            _projectRepository.Add(projectEntity);
 
             await _unitOfWork.SaveChangesAsync();
         }
@@ -31,6 +32,9 @@ namespace Axelot.Business.Services
         public async Task<IEnumerable<ProjectModel>> GetAllProjects()
         {
             var projectsEntities = await _projectRepository.GetAllAsync();
+
+            if (!projectsEntities.Any())
+                throw new EntityNotFoundException(nameof(projectsEntities));
 
             return _mapper.Map<IEnumerable<ProjectModel>>(projectsEntities);
 
@@ -40,6 +44,9 @@ namespace Axelot.Business.Services
         {
             var projectEntity = await _projectRepository.FindSingleAsync(projectId);
 
+            if (projectEntity is null)
+                throw new EntityNotFoundException(nameof(projectEntity));
+
             return _mapper.Map<ProjectModel>(projectEntity);
         }
 
@@ -47,14 +54,17 @@ namespace Axelot.Business.Services
         {
             var projectEntity = await _projectRepository.FindSingleAsync(projectId);
 
-            await _projectRepository.Delete(projectEntity);
+            if (projectEntity is null)
+                throw new EntityNotFoundException(nameof(projectEntity));
+
+            _projectRepository.Delete(projectEntity);
         }
 
         public async Task UpdateProject(ProjectModel projectModel)
         {
             var projectEntity = _mapper.Map<ProjectEntity>(projectModel);
 
-            await _projectRepository.Update(projectEntity);
+            _projectRepository.Update(projectEntity);
 
             await _unitOfWork.SaveChangesAsync();
         }

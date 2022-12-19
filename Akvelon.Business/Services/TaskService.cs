@@ -8,6 +8,9 @@ using Akvelon.DAL.Interfaces.Repositories;
 
 namespace Akvelon.Business.Services
 {
+    /// <summary>
+    /// Business logic service for work with tasks
+    /// </summary>
     public class TaskService : ITaskService
     {
         private readonly IMapper _mapper;
@@ -39,12 +42,6 @@ namespace Akvelon.Business.Services
             return _mapper.Map<IEnumerable<TaskModel>>(tasksEntities);
         }
 
-        public async Task<IEnumerable<TaskModel>> GettAllTasksByProjectId(Guid projectId)
-        {
-            throw new NotImplementedException();
-            //TODO: use specification
-        }
-
         public async Task<TaskModel> GetTaskById(Guid taskId)
         {
             var taskEntity = await _taskRepository.FindSingleAsync(taskId);
@@ -63,6 +60,8 @@ namespace Akvelon.Business.Services
                 throw new EntityNotFoundException(nameof(taskEntity));
 
             _taskRepository.Delete(taskEntity);
+
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task UpdateTask(TaskModel taskModel)

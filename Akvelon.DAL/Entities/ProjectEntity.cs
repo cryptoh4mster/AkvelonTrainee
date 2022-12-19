@@ -2,6 +2,9 @@
 
 namespace Akvelon.DAL.Entities
 {
+    /// <summary>
+    /// Entity for project data in db
+    /// </summary>
     public class ProjectEntity : BaseEntity<Guid>
     {
         public string Name { get; set; }

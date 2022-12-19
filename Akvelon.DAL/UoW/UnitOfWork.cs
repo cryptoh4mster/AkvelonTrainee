@@ -5,6 +5,9 @@ using Akvelon.DAL.Repositories;
 
 namespace Akvelon.DAL.UoW
 {
+    /// <summary>
+    /// Uow pattern class
+    /// </summary>
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
         private readonly AppDbContext _db;
@@ -16,6 +19,9 @@ namespace Akvelon.DAL.UoW
             _db = db;
         }
 
+        /// <summary>
+        /// This property provides instance to work with task repository
+        /// </summary>
         public ITaskRepository TaskRepository
         {
             get
@@ -27,6 +33,9 @@ namespace Akvelon.DAL.UoW
             }
         }
 
+        /// <summary>
+        /// This property provides instance to work with project repository
+        /// </summary>
         public IProjectRepository ProjectRepository
         {
             get
@@ -38,11 +47,19 @@ namespace Akvelon.DAL.UoW
             }
         }
 
+        /// <summary>
+        /// Save changes made in this context in db
+        /// </summary>
+        /// <returns>Task that represents the asynchronious save operation</returns>
         public async Task SaveChangesAsync()
         {
             await _db.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Virtual method for release the allocated resources
+        /// </summary>
+        /// <param name="disposing"></param>
         public virtual void Dispose(bool disposing)
         {
             if (!disposed)
@@ -55,6 +72,9 @@ namespace Akvelon.DAL.UoW
             }
         }
 
+        /// <summary>
+        /// Method for release the allocated resources with supressfinalize
+        /// </summary>
         public void Dispose() 
         {
             Dispose(true);

@@ -2,6 +2,9 @@
 
 namespace Akvelon.DAL.Entities
 {
+    /// <summary>
+    /// Entity for task data in db
+    /// </summary>
     public class TaskEntity : BaseEntity<Guid>
     {
         public string Name { get; set; }

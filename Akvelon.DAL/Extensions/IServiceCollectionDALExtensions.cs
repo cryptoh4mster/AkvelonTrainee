@@ -9,6 +9,11 @@ namespace Akvelon.DAL.Extensions
 {
     public static class IServiceCollectionDALExtensions
     {
+        /// <summary>
+        /// Extension method for register dependencies from data layer
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
         public static void RegisterDataAccess(this IServiceCollection services, IConfiguration configuration)
         {
             var appDbConnectionString = configuration.GetConnectionString("Axelot.DevelopmentDb");

@@ -14,7 +14,7 @@
   1. Unit tests
 
 ## Start:
-  1. You should have postgresql on your computer.
+  1. You should have postgresql on your computer (and "postgres" user with "postgres" password with all privelegies).
   2. To start the application you should clone this project, open vs, start the application with AkvelonProfile ![image](https://user-images.githubusercontent.com/55590417/208490380-c986e9f7-2988-487d-ae92-16cde54785a6.png) <br>
   3. Another way to start project - using docker-compose (build and up), it should work.
 

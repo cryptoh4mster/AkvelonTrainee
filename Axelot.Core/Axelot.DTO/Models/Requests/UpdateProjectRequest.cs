@@ -1,15 +1,12 @@
-﻿using Axelot.Core.Enums;
-
-namespace Axelot.Business.Models
+﻿namespace Axelot.DTO.Models.Requests
 {
-    public class ProjectModel
+    public class UpdateProjectRequest
     {
         public Guid ProjectId { get; set; }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime CompletionDate { get; set; }
-        public ProjectStatus Status { get; set; }
+        public string Status { get; set; }
         public int Priority { get; set; }
-        public IEnumerable<TaskModel>? Tasks { get; set; }
     }
 }

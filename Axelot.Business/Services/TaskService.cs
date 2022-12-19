@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Axelot.Business.Interfaces;
 using Axelot.Business.Models;
+using Axelot.Core.Exceptions;
 using Axelot.DAL.Entities;
 using Axelot.DAL.Interfaces;
 using Axelot.DAL.Interfaces.Repositories;
-using Axelot.DAL.Repositories;
 
 namespace Axelot.Business.Services
 {
@@ -24,7 +24,7 @@ namespace Axelot.Business.Services
         {
             var taskEntity = _mapper.Map<TaskEntity>(taskModel);
 
-            await _taskRepository.Add(taskEntity);
+            _taskRepository.Add(taskEntity);
 
             await _unitOfWork.SaveChangesAsync();
         }
@@ -32,6 +32,9 @@ namespace Axelot.Business.Services
         public async Task<IEnumerable<TaskModel>> GetAllTasks()
         {
             var tasksEntities = await _taskRepository.GetAllAsync();
+
+            if (!tasksEntities.Any())
+                throw new EntityNotFoundException(nameof(tasksEntities));
 
             return _mapper.Map<IEnumerable<TaskModel>>(tasksEntities);
         }
@@ -46,6 +49,9 @@ namespace Axelot.Business.Services
         {
             var taskEntity = await _taskRepository.FindSingleAsync(taskId);
 
+            if (taskEntity is null)
+                throw new EntityNotFoundException(nameof(taskEntity));
+
             return _mapper.Map<TaskModel>(taskEntity);
         }
 
@@ -53,14 +59,17 @@ namespace Axelot.Business.Services
         {
             var taskEntity = await _taskRepository.FindSingleAsync(taskId);
 
-            await _taskRepository.Delete(taskEntity);
+            if (taskEntity is null)
+                throw new EntityNotFoundException(nameof(taskEntity));
+
+            _taskRepository.Delete(taskEntity);
         }
 
-        public async Task UpdateTaskById(TaskModel taskModel)
+        public async Task UpdateTask(TaskModel taskModel)
         {
             var taskEntity = _mapper.Map<TaskEntity>(taskModel);
 
-            await _taskRepository.Update(taskEntity);
+            _taskRepository.Update(taskEntity);
 
             await _unitOfWork.SaveChangesAsync();
         }

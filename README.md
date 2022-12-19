@@ -4,7 +4,7 @@
   1. Pattern Repository
   2. UoW
   3. Specification pattern
-  4. 3-Layer architecture
+  4. 3-Layer architecture (Also added "core" and "dto" projects to keep general classes, mappings, enums, etc..) 
   5. Validation
   6. Dockerfile build and run works (cd to folder with dockerfile, docker build -t akvelonapi ., docker run --name akvelonapi -p 80:80 akvelonapi:latest)
   7. Docker-compose build and up works (cd to folder with docker-compose, docker-compose build, docker-compose up)

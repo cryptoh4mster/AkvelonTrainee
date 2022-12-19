@@ -82,5 +82,16 @@ namespace Akvelon.Business.Services
 
             await _unitOfWork.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<ProjectModel>> GetProjectsByCriteria(ProjectCriteriaModel projectCriteriaModel)
+        {
+            var spec = new ProjectsByCriteriaSelectionSpecification(projectCriteriaModel);
+            var projectsEntities = await _projectRepository.FindManyAsync(spec);
+
+            if (!projectsEntities.Any())
+                throw new EntityNotFoundException(nameof(projectsEntities));
+
+            return _mapper.Map<IEnumerable<ProjectModel>>(projectsEntities);
+        }
     }
 }

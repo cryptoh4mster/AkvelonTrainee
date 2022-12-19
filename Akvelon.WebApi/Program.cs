@@ -13,7 +13,7 @@ var configuration = builder.Configuration;
 builder.Services.RegisterDataAccess(configuration);
 builder.Services.RegisterBusinessServices();
 builder.Logging.SetupLogger(configuration);
-builder.Services.AddAutoMapper(typeof(ProjectModelMapper), typeof(TaskModelMapper), typeof(ProjectEntityMapper), typeof(TaskEntityMapper)); ;
+builder.Services.AddAutoMapper(typeof(ProjectModelMapper), typeof(TaskModelMapper), typeof(ProjectEntityMapper), typeof(TaskEntityMapper), typeof(ProjectCriteriaModelMapper));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

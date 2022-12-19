@@ -75,5 +75,16 @@ namespace Akvelon.WebApi.Controllers
 
             return Ok(_mapper.Map<ProjectWithTasksResponse>(result));
         }
+
+        [HttpPost]
+        [Route("projects-by-criteria")]
+        public async Task<IActionResult> GetProjectsByCriteria(ProjectCriteriaRequest request)
+        {
+            var projectCriteriaModel = _mapper.Map<ProjectCriteriaModel>(request);
+
+            var result = await _projectService.GetProjectsByCriteria(projectCriteriaModel);
+
+            return Ok(_mapper.Map<IEnumerable<ProjectResponse>>(result));
+        }
     }
 }
